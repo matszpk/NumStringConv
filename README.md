@@ -9,13 +9,17 @@ Source code has been written in C++11, so you must have compiler that supports t
 
 ### Sample compilation:
 
-g++ -Wall -std=gnu++11 -I. -c -o NumStringConv.o NumStringConv.cpp
-
-or (for Linux)
+to create libraries (static and shared):
 
 make
 
-to create libraries (static and shared)
+or (for standalone object file):
+
+g++ -Wall -std=gnu++11 -I. -c -o NumStringConv.o NumStringConv.cpp
+
+### Run tests:
+
+make test
 
 ### cstrtofXCStyle routine:
 

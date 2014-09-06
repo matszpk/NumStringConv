@@ -3,7 +3,7 @@
 # Mateusz Szpakowski
 ###
 
-.PHONY: all clean
+.PHONY: all clean test
 
 CXX = g++
 AR = ar
@@ -41,6 +41,9 @@ fXtocstrCStyle: fXtocstrCStyle.o libNumStringConv.a
 
 %.lo: %.cpp
 	$(CXX) $(CXXFLAGS) $(INCDIRS) $(SOFLAGS) -c -o $@ $<
+
+test: cstrtofXTest
+	./cstrtofXTest
 
 clean:
 	rm -f *.o *.lo libNumStringConv.a libNumStringConv.so cstrtofXCStyle \
