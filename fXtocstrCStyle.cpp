@@ -89,7 +89,7 @@ int main(int argc, const char** argv)
             case 'h':
             {
                 uint16_t v = cstrtohCStyle(argv[1], argv[1] + clen, outEnd);
-                printf("%04hx\n%1.4e\n", v, halfToFloat(v));
+                printf("NumStr: %04hx,%1.4e\n", v, halfToFloat(v));
                 try
                 {
                     outlen = htocstrCStyle(v, buffer, buflen);
@@ -117,7 +117,7 @@ int main(int argc, const char** argv)
                 FloatUnion v, ov;
                 v.f = cstrtofCStyle(argv[1], argv[1] + clen, outEnd);
                 ov.f = strtof(argv[1], &endptr);
-                printf("%08x\n%1.7e\n%08x\n%1.7e\n", v.u, v.f, ov.u, ov.f);
+                printf("NumStr: %08x,%1.7e\nSystem: %08x,%1.7e\n", v.u, v.f, ov.u, ov.f);
                 try
                 {
                     outlen = ftocstrCStyle(v.f, buffer, buflen);
@@ -145,7 +145,7 @@ int main(int argc, const char** argv)
                 DoubleUnion v, ov;
                 v.d = cstrtodCStyle(argv[1], argv[1] + clen, outEnd);
                 ov.d = strtod(argv[1], &endptr);
-                printf("%016llx\n%1.16e\n%016llx\n%1.16e\n", v.u, v.d, ov.u, ov.d);
+                printf("NumStr: %016llx,%1.16e\nSystem: %016llx,%1.16e\n", v.u, v.d, ov.u, ov.d);
                 try
                 {
                     outlen = dtocstrCStyle(v.d, buffer, buflen);

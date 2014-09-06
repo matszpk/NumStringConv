@@ -108,6 +108,7 @@ inline cxuint CLZ64(uint64_t v)
 /** parses unsigned integer in decimal form from str string. inend can points
  * to end of string or can be null. Function throws ParseException when number in string
  * is out of range, when string does not have number or inend points to string.
+ * WARNING: Function does not skip first spaces.
  * \param str input string pointer
  * \param inend pointer points to end of string or null if not end specified
  * \param outend returns end of number in string
@@ -121,6 +122,7 @@ extern cxuint cstrtoui(const char* str, const char* inend, const char*& outend);
  * is out of range, when string does not have number or inend points to string.
  * Function accepts decimal format, octal form (with prefix '0'), hexadecimal form
  * (prefix '0x' or '0X'), and binary form (prefix '0b' or '0B').
+ * WARNING: Function does not skip first spaces.
  * \param str input string pointer
  * \param inend pointer points to end of string or null if not end specified
  * \param outend returns end of number in string
@@ -134,6 +136,7 @@ extern uint8_t cstrtou8CStyle(const char* str, const char* inend, const char*& o
  * is out of range, when string does not have number or inend points to string.
  * Function accepts decimal format, octal form (with prefix '0'), hexadecimal form
  * (prefix '0x' or '0X'), and binary form (prefix '0b' or '0B').
+ * WARNING: Function does not skip first spaces.
  * \param str input string pointer
  * \param inend pointer points to end of string or null if not end specified
  * \param outend returns end of number in string
@@ -147,6 +150,7 @@ extern uint16_t cstrtou16CStyle(const char* str, const char* inend, const char*&
  * is out of range, when string does not have number or inend points to string.
  * Function accepts decimal format, octal form (with prefix '0'), hexadecimal form
  * (prefix '0x' or '0X'), and binary form (prefix '0b' or '0B').
+ * WARNING: Function does not skip first spaces.
  * \param str input string pointer
  * \param inend pointer points to end of string or null if not end specified
  * \param outend returns end of number in string
@@ -160,6 +164,7 @@ extern uint32_t cstrtou32CStyle(const char* str, const char* inend, const char*&
  * is out of range, when string does not have number or inend points to string.
  * Function accepts decimal format, octal form (with prefix '0'), hexadecimal form
  * (prefix '0x' or '0X'), and binary form (prefix '0b' or '0B').
+ * WARNING: Function does not skip first spaces.
  * \param str input string pointer
  * \param inend pointer points to end of string or null if not end specified
  * \param outend returns end of number in string
@@ -174,6 +179,7 @@ extern uint64_t cstrtou64CStyle(const char* str, const char* inend, const char*&
  * Function accepts decimal format and binary format. Result is rounded to nearest even
  * (if two values are equally close will be choosen a even value).
  * Currently only IEEE-754 format is supported.
+ * WARNING: Function does not skip first spaces.
  * \param str input string pointer
  * \param inend pointer points to end of string or null if not end specified
  * \param outend returns end of number in string
@@ -188,6 +194,7 @@ extern cxushort cstrtohCStyle(const char* str, const char* inend, const char*& o
  * Function accepts decimal format and binary format. Result is rounded to nearest even
  * (if two values are equally close will be choosen a even value).
  * Currently only IEEE-754 format is supported.
+ * WARNING: Function does not skip first spaces.
  * \param str input string pointer
  * \param inend pointer points to end of string or null if not end specified
  * \param outend returns end of number in string
@@ -202,6 +209,7 @@ extern float cstrtofCStyle(const char* str, const char* inend, const char*& oute
  * Function accepts decimal format and binary format. Result is rounded to nearest even
  * (if two values are equally close will be choosen a even value).
  * Currently only IEEE-754 format is supported.
+ * WARNING: Function does not skip first spaces.
  * \param str input string pointer
  * \param inend pointer points to end of string or null if not end specified
  * \param outend returns end of number in string
