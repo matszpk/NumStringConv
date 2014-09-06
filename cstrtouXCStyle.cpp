@@ -42,7 +42,7 @@ int main(int argc, const char** argv)
         clen = strtoul(argv[3], &endptr, 10);
         if (errno != 0 || *endptr != 0 || endptr == argv[3])
         {
-            fputs("Cant parse numchars\n",stderr);
+            std::cerr << "Cant parse numchars" << std::endl;
             return 1;
         }
     }
