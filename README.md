@@ -23,6 +23,7 @@ fXtocstrCStyle routines:
   converts number in IEEE-754 format (half, float or double). Can converts only to decimal form (human readable or scientific).
 
 cstrtouXCStyle routines:
+
   convert string (in C language literal format) to unsigned integer number. Supports binary (prefix: 0b), octal (prefix: 0)
   and hexadecimal (prefix: 0x).
   WARNING: this version does not skip spaces, you must skip before use this function!
