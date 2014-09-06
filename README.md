@@ -10,6 +10,12 @@ Source code has been written in C++11, so you must have compiler that supports t
 Sample compilation:
 g++ -Wall -std=gnu++11 -I. -c -o NumStringConv.o NumStringConv.cpp
 
+or (for Linux)
+
+make
+
+to create libraries (static and shared)
+
 cstrtofXCStyle routine:
 
   converts string to number in IEEE-754 format (half, float or double). Supports only rounding to nearest even and

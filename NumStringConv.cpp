@@ -22,9 +22,9 @@
 #include <algorithm>
 #ifdef CSTRTOFX_DUMP_IRRESULTS
 #include <iostream>
-#include <sstream>
 #include <iomanip>
 #endif
+#include <sstream>
 #include <cstdint>
 #include <vector>
 #include <alloca.h>
@@ -33,6 +33,39 @@
 #include <NumStringConv.h>
 
 using namespace CLRX;
+
+Exception::Exception(const std::string& message)
+{
+    this->message = message;
+}
+
+const char* Exception::what() const throw()
+{
+    return message.c_str();
+}
+
+ParseException::ParseException(const std::string& message)
+{
+    this->message = message;
+}
+
+ParseException::ParseException(size_t lineNo, const std::string& message)
+{
+    std::ostringstream oss;
+    oss.imbue(std::locale::classic());
+    oss << lineNo << ": " << message;
+    oss.flush();
+    this->message = oss.str();
+}
+
+ParseException::ParseException(size_t lineNo, size_t charNo, const std::string& message)
+{
+    std::ostringstream oss;
+    oss.imbue(std::locale::classic());
+    oss << lineNo << ":" << charNo << ": " << message;
+    oss.flush();
+    this->message = oss.str();
+}
 
 cxuint CLRX::cstrtoui(const char* str, const char* inend, const char*& outend)
 {
