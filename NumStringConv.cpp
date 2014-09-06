@@ -25,6 +25,7 @@
 #include <iomanip>
 #endif
 #include <sstream>
+#include <locale>
 #include <cstdint>
 #include <vector>
 #include <alloca.h>
