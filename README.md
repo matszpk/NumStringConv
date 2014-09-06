@@ -16,7 +16,8 @@ cstrtofXCStyle routine:
   ignores locales (useful for conversion for textual files likes source codes).
   This functions support decimal form and hexadecimal form (as in C language).
   This functions has been designed to be the most accurate and uses big number arithmetic to achieve required precision.
-  WARNING: this version does not skip spaces, you must skip before use this function!
+  
+  WARNING: this version does not skip spaces, if you need you must skip spaces before using this function!
   
 fXtocstrCStyle routines:
 
@@ -26,7 +27,8 @@ cstrtouXCStyle routines:
 
   convert string (in C language literal format) to unsigned integer number. Supports binary (prefix: 0b), octal (prefix: 0)
   and hexadecimal (prefix: 0x).
-  WARNING: this version does not skip spaces, you must skip before use this function!
+  
+  WARNING: this version does not skip spaces, if you need you must skip spaces before using this function!
 
 uXtocstrCStyle routines:
   convert unsigned integer number to string.
