@@ -22,7 +22,6 @@
 #include <sstream>
 #include <cstdint>
 #include <cstring>
-#include <climits>
 #include <NumStringConv.h>
 
 using namespace CLRX;

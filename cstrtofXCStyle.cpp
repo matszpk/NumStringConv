@@ -20,6 +20,10 @@
 #include <cstdio>
 #include <exception>
 #include <cstring>
+#include <cerrno>
+#include <cstdint>
+#define __STDC_FORMAT_MACROS
+#include <cinttypes>
 #include <NumStringConv.h>
 
 using namespace CLRX;
@@ -73,6 +77,11 @@ int main(int argc, const char** argv)
         char* endptr;
         errno = 0;
         clen = strtoul(argv[3], &endptr, 10);
+        if (errno != 0 || *endptr != 0 || endptr == argv[3])
+        {
+            fputs("Cant parse numchars\n",stderr);
+            return 1;
+        }
     }
     
     if (clen == 0)
@@ -102,7 +111,8 @@ int main(int argc, const char** argv)
                 DoubleUnion v, ov;
                 v.d = cstrtodCStyle(argv[1], argv[1] + clen, outEnd);
                 ov.d = strtod(argv[1], &endptr);
-                printf("NumStr: %016llx,%1.16e\nSystem: %016llx,%1.16e\n", v.u, v.d, ov.u, ov.d);
+                printf("NumStr: %016" PRIx64 ",%1.16e\nSystem: %016" PRIx64 ",%1.16e\n",
+                       v.u, v.d, ov.u, ov.d);
                 break;
             }
             default:

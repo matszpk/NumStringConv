@@ -20,6 +20,8 @@
 #include <iostream>
 #include <exception>
 #include <cstring>
+#include <cerrno>
+#include <cstdint>
 #include <NumStringConv.h>
 
 using namespace CLRX;
@@ -38,6 +40,11 @@ int main(int argc, const char** argv)
         char* endptr;
         errno = 0;
         clen = strtoul(argv[3], &endptr, 10);
+        if (errno != 0 || *endptr != 0 || endptr == argv[3])
+        {
+            fputs("Cant parse numchars\n",stderr);
+            return 1;
+        }
     }
     
     if (clen == 0)
