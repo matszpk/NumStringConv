@@ -21,7 +21,7 @@ g++ -Wall -std=gnu++11 -I. -c -o NumStringConv.o NumStringConv.cpp
 
 make test
 
-### cstrtofXCStyle routine:
+### cstrtofXCStyle routines:
 
 converts string to number in IEEE-754 format (half, float or double). Supports only rounding to nearest even and
 ignores locales (useful for conversion for textual files likes source codes).

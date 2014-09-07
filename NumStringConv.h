@@ -30,7 +30,7 @@
 #include <cstdint>
 #include <mutex>
 
-/** HAVE_INT128 - enable GCC __int128 support for faster multiplicartion */
+/** HAVE_INT128 - enable GCC __int128 support for faster multiplication */
 #if defined(__SIZEOF_POINTER__) && __SIZEOF_POINTER__==8 && defined(__GNUC__)
 #  define HAVE_INT128 1
 #endif
