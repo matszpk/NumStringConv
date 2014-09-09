@@ -9,7 +9,7 @@ CXX = g++
 AR = ar
 RANLIB = ranlib
 # CXXFLAGS = -Wall -std=gnu++11 -g
-CXXFLAGS = -Wall -std=gnu++11 -O2 -funroll-loops
+CXXFLAGS = -Wall -std=gnu++11 -O2
 INCDIRS = -I.
 LDFLAGS = -Wall
 SOFLAGS = -fPIC
