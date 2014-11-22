@@ -1789,7 +1789,7 @@ static size_t fXtocstrCStyle(uint64_t value, char* str, size_t maxSize,
             *p++ = 'f';
         }
         *p = 0;
-        return ((ptrdiff_t)p)-((ptrdiff_t)str);
+        return p-str;
     }
     
     uint64_t mantisa = value&mantisaMask;
@@ -1816,7 +1816,7 @@ static size_t fXtocstrCStyle(uint64_t value, char* str, size_t maxSize,
             *p++='0';
         }   
         *p = 0;
-        return ((ptrdiff_t)p)-((ptrdiff_t)str);
+        return p-str;
     }
     
     cxuint significantBits = 0;
@@ -2033,7 +2033,7 @@ static size_t fXtocstrCStyle(uint64_t value, char* str, size_t maxSize,
     }
     
     *p = 0;
-    return ((ptrdiff_t)p)-((ptrdiff_t)str);
+    return p-str;
 }
 
 size_t CLRX::htocstrCStyle(cxushort value, char* str, size_t maxSize, bool scientific)
@@ -2156,5 +2156,5 @@ size_t CLRX::u64tocstrCStyle(uint64_t value, char* str, size_t maxSize, cxuint r
         *p++ = buffer[pos-1];
 
     *p = 0;
-    return ((ptrdiff_t)p)-((ptrdiff_t)str);
+    return p-str;
 }
