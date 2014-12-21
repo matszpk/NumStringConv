@@ -1483,7 +1483,7 @@ static uint64_t cstrtofXCStyle(const char* str, const char* inend,
                             processedDigits += pow10;
                             digitsOfPart += pow10;
                         }
-                        uint64_t tmpPack[4];
+                        uint64_t tmpPack[5];
                         // put to digitPack
                         bigMul(1, &power10sTable[digitsOfPart], 4, digitPack, tmpPack);
                         digitPack[0] = tmpPack[0];
