@@ -2058,7 +2058,7 @@ size_t CLRX::dtocstrCStyle(double value, char* str, size_t maxSize, bool scienti
 size_t CLRX::u32tocstrCStyle(uint32_t value, char* str, size_t maxSize, cxuint radix,
              cxuint width, bool prefix)
 {
-    return u64tocstrCStyle(value, str, maxSize, radix, width);
+    return u64tocstrCStyle(value, str, maxSize, radix, width, prefix);
 }
 
 size_t CLRX::u64tocstrCStyle(uint64_t value, char* str, size_t maxSize, cxuint radix,
